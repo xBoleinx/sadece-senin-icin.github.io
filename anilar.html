@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📸 Anılar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('emirim-icin/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1100;
+      color: #fff;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 15px 30px;
+      color: #ff6f91;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .sidebar a:hover {
+      background-color: #ffe3ea;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .content {
+      padding: 80px 20px 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+      color: #fff;
+    }
+
+    h1 {
+      color: #ffccdd;
+      margin-bottom: 30px;
+    }
+
+    .photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+    @media (max-width: 768px) {
+      .menu-btn {
+        font-size: 26px;
+        top: 15px;
+        left: 15px;
+      }
+
+      .sidebar {
+        width: 200px;
+      }
+
+      .sidebar a {
+        font-size: 16px;
+      }
+
+      .photo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+
+      .photo-grid img {
+        width: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">💌 Anasayfa</a>
+
+    <a href="anilar.html">📸 Anılarımız</a>
+<a href="videolar.html">🎥 Videolarımız</a>
+ <a href="mini-test.html">🎓 Karım Üniversitesi Mezuniyet Sınavı📝</a>
+<a href="gokyuzu-ve-biz.html">🌠 Gökyüzü ve Biz</a>
+    <a href="veda.html">🌹 Veda</a> <!-- Yeni Sayfa Bağlantısı -->
+  </div>
+
+  <div class="content">
+  <h1>📸 Geçmişten bugüne anılarımız...</h1>
+
+  <!-- Fotoğraf Galerisi -->
+  <div class="photo-grid">
+
+  <!-- Fotoğraflar -->
+  <div class="photo-grid">
+    <img src="assets/Ani.jpeg" alt="anı 1">
+    <img src="assets/Ani (1).jpeg" alt="anı 2">
+    <img src="assets/Ani (2).jpeg" alt="anı 3">
+    <img src="assets/Ani (3).jpeg" alt="anı 4">
+    <img src="assets/Ani (4).jpeg" alt="anı 5">
+    <img src="assets/Ani (5).jpeg" alt="anı 6">
+    <img src="assets/Ani (6).jpeg" alt="anı 7">
+    <img src="assets/Ani (7).jpeg" alt="anı 8">
+    <img src="assets/Ani (8).jpeg" alt="anı 9">
+    <img src="assets/Ani (9).jpeg" alt="anı 10">
+    <img src="assets/Ani (10).jpeg" alt="anı 11">
+    <img src="assets/Ani (11).jpeg" alt="anı 12">
+    <img src="assets/Ani (12).jpeg" alt="anı 13">
+    <img src="assets/Ani (13).jpeg" alt="anı 14">
+    <img src="assets/Ani (14).jpeg" alt="anı 15">
+    <img src="assets/Ani (15).jpeg" alt="anı 16">
+    <img src="assets/Ani (16).jpeg" alt="anı 17">
+    <img src="assets/Ani (17).jpeg" alt="anı 18">
+    <img src="assets/Ani (18).jpeg" alt="anı 19">
+    <img src="assets/Ani (19).jpeg" alt="anı 20">
+    <img src="assets/Ani (20).jpeg" alt="anı 21">
+    <img src="assets/Ani (21).jpeg" alt="anı 22">
+    <img src="assets/Ani (22).jpeg" alt="anı 23">
+    <img src="assets/Ani (23).jpeg" alt="anı 24">
+    <img src="assets/Ani (24).jpeg" alt="anı 25">
+    <img src="assets/Ani (25).jpeg" alt="anı 26">
+    <img src="assets/Ani (26).jpeg" alt="anı 27">
+    <img src="assets/Ani (28).jpeg" alt="anı 28">
+    <img src="assets/Ani (29).jpeg" alt="anı 29">
+    <img src="assets/Ani (30).jpeg" alt="anı 30">
+
+<img src="assets/Ani (31).jpeg" alt="anı 31">
+<img src="assets/Ani (32).jpeg" alt="anı 32">
+<img src="assets/Ani (33).jpeg" alt="anı 33">
+<img src="assets/Ani (34).jpeg" alt="anı 34">
+<img src="assets/Ani (35).jpeg" alt="anı 35">
+<img src="assets/Ani (36).jpeg" alt="anı 36">
+<img src="assets/Ani (37).jpeg" alt="anı 37">
+<img src="assets/Ani (38).jpeg" alt="anı 38">
+<img src="assets/Ani (39).jpeg" alt="anı 39">
+<img src="assets/Ani (40).jpeg" alt="anı 40">
+<img src="assets/Ani (41).jpeg" alt="anı 41">
+<img src="assets/Ani (42).jpeg" alt="anı 42">
+<img src="assets/Ani (43).jpeg" alt="anı 43">
+<img src="assets/Ani (44).jpeg" alt="anı 44">
+
+<img src="assets/Ani (45).jpeg" alt="anı 46">
+<img src="assets/Ani (46).jpeg" alt="anı 47">
+<img src="assets/Ani (47).jpeg" alt="anı 48">
+<img src="assets/Ani (48).jpeg" alt="anı 49">
+<img src="assets/Ani (49).jpeg" alt="anı 50">
+<img src="assets/Ani (50).jpeg" alt="anı 51">
+<img src="assets/Ani (51).jpeg" alt="anı 52">
+<img src="assets/Ani (52).jpeg" alt="anı 53">
+<img src="assets/Ani (53).jpeg" alt="anı 54">
+<img src="assets/Ani (54).jpeg" alt="anı 55">
+<img src="assets/Ani (55).jpeg" alt="anı 56">
+<img src="assets/Ani (56).jpeg" alt="anı 57">
+<img src="assets/Ani (57).jpeg" alt="anı 58">
+<img src="assets/Ani (58).jpeg" alt="anı 59">
+<img src="assets/Ani (59).jpeg" alt="anı 60">
+<img src="assets/Ani (60).jpeg" alt="anı 61">
+<img src="assets/Ani (61).jpeg" alt="anı 62">
+<img src="assets/Ani (62).jpeg" alt="anı 63">
+<img src="assets/Ani (63).jpeg" alt="anı 64">
+<img src="assets/Ani (64).jpeg" alt="anı 65">
+<img src="assets/Ani (65).jpeg" alt="anı 66">
+<img src="assets/Ani (66).jpeg" alt="anı 67">
+<img src="assets/Ani (67).jpeg" alt="anı 68">
+<img src="assets/Ani (68).jpeg" alt="anı 69">
+<img src="assets/Ani (69).jpeg" alt="anı 70">
+<img src="assets/Ani (70).jpeg" alt="anı 71">
+<img src="assets/Ani (71).jpeg" alt="anı 72">
+<img src="assets/Ani (72).jpeg" alt="anı 73">
+<img src="assets/Ani (73).jpeg" alt="anı 74">
+<img src="assets/Ani (74).jpeg" alt="anı 75">
+<img src="assets/Ani (75).jpeg" alt="anı 76">
+<img src="assets/Ani (76).jpeg" alt="anı 77">
+<img src="assets/Ani (77).jpeg" alt="anı 78">
+<img src="assets/Ani (78).jpeg" alt="anı 79">
+<img src="assets/Ani (79).jpeg" alt="anı 80">
+<img src="assets/Ani (80).jpeg" alt="anı 81">
+<img src="assets/Ani (81).jpeg" alt="anı 82">
+<img src="assets/Ani (82).jpeg" alt="anı 83">
+<img src="assets/Ani (83).jpeg" alt="anı 84">
+<img src="assets/Ani (84).jpeg" alt="anı 85">
+<img src="assets/Ani (85).jpeg" alt="anı 86">
+<img src="assets/Ani (86).jpeg" alt="anı 87">
+<img src="assets/Ani (87).jpeg" alt="anı 88">
+<img src="assets/Ani (88).jpeg" alt="anı 89">
+<img src="assets/Ani (89).jpeg" alt="anı 90">
+<img src="assets/Ani (90).jpeg" alt="anı 91">
+<img src="assets/Ani (91).jpeg" alt="anı 92">
+<img src="assets/Ani (92).jpeg" alt="anı 93">
+<img src="assets/Ani (93).jpeg" alt="anı 94">
+<img src="assets/Ani (94).jpeg" alt="anı 95">
+<img src="assets/Ani (95).jpeg" alt="anı 96">
+<img src="assets/Ani (96).jpeg" alt="anı 97">
+<img src="assets/Ani (97).jpeg" alt="anı 98">
+<img src="assets/Ani (98).jpeg" alt="anı 99">
+<img src="assets/Ani (99).jpeg" alt="anı 100">
+<img src="assets/Ani (100).jpeg" alt="anı 101">
+<img src="assets/Ani (101).jpeg" alt="anı 102">
+
+
+
+
+
+  </div>
+
+<!-- Elfsight Audio Player | Dinlemelisin ❤️‍🩹 -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-f90bf497-391f-489c-bae4-faf5beecd3aa" data-elfsight-app-lazy></div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

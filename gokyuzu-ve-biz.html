@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gökyüzü ve Biz – 9.10.2022</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('emirim-icin/background.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      color: #333;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      height: 100%;
+      width: 220px;
+      position: fixed;
+      top: 0;
+      left: -220px; /* Menü başlangıçta kapalı */
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      padding-top: 20px;
+      transition: 0.3s;
+      overflow-x: hidden;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #ff6f91;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold; /* Menüdeki yazıları kalın yap */
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #ffe3ea;
+    }
+
+    .menu-toggle {
+      font-size: 26px;
+      cursor: pointer;
+      position: fixed;
+      top: 10px;
+      left: 15px;
+      z-index: 1001;
+      color: #ff6f91;
+      background: none;
+      border: none;
+    }
+
+    .content {
+      margin-left: 240px;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center; /* İçeriği ortala */
+    }
+
+    .content > div {
+      max-width: 1000px; /* İçeriği daha dar bir alanda tut */
+      width: 100%;
+    }
+
+    h1 {
+      color: black;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 40px;
+      justify-items: center;
+    }
+
+    .gallery img {
+      width: 350px;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .gallery .caption {
+      text-align: center;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .info-section {
+      margin-top: 40px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.6;
+    }
+
+    .sidebar a:first-child {
+      margin-top: 30px; /* Menüde ilk öğe için üst margin */
+    }
+
+    @media screen and (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .content {
+      margin-left: 0;
+      padding: 60px 20px 20px 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">💌 Anasayfa</a>
+
+    <a href="anilar.html">📸 Anılar</a>
+    <a href="videolar.html">🎥 Videolarımız</a>
+    <a href="mini-test.html">🎓 Karım Üniversitesi Mezuniyet Sınavı📝</a>
+    <a href="gokyuzu-ve-biz.html">🌠 Gökyüzü ve Biz</a>
+    <a href="veda.html">🌹 Veda</a> <!-- Yeni Sayfa Bağlantısı -->
+  </div>
+
+  <div class="content">
+    <div>
+      <h1>🌠Gökyüzü ve Biz – 9.10.2022</h1>
+
+      <p>Tanıştığımız gün gökyüzünde neler olduğunu merak ettim—ve karşıma çıkan şey sadece bir yıldız haritası değildi. O gün sadece biz değil, evrenin kendisi de bir şeyler yaşıyormuş.</p>
+      <p>9 Ekim 2022'de, bilim insanlarının “BOAT” adını verdiği (yani “tüm zamanların en parlağı”) olağanüstü bir gama ışını patlaması meydana gelmiş. O kadar güçlüymüş ki, Dünya'nın üst atmosferi bile bunu hissetmiş.<br />
+      Galaksiler ötesinden gelen bir ışık, biz tanışırken Dünya'ya ulaşıyormuş.<br /><br />
+      Belki bu sadece bir tesadüf. Ama o gün evrende böyle büyük bir olay yaşanırken seninle tanışmamız… Sanki o anı sadece kalbimde değil, yıldızlarda da bir iz bırakmak ister gibi.</p>
+
+      <div class="gallery">
+        <div>
+          <img src="emirim-icin/galaksi (1).jpg" alt="Gökyüzü Fotoğrafı 1" />
+          <div class="caption">9.10.2022 gökyüzü haritası</div>
+        </div>
+        <div>
+          <img src="emirim-icin/galaksi (2).jpg" alt="Gökyüzü Fotoğrafı 2" />
+          <div class="caption">Gama ışını patlaması</div>
+        </div>
+        <div>
+          <img src="emirim-icin/galaksi (3).jpg" alt="Gökyüzü Fotoğrafı 3" />
+          <div class="caption">Gama ışını patlaması</div>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h2>Nasa'nın yayımladığı makaleye göre;</h2>
+        <p>Ekim 2022’de astronomlar, çok geçmeden “BOAT” (yani “tüm zamanların en parlağı”) olarak adlandırılan gama ışını patlaması (GRB) karşısında adeta şaşkına döndü. Şimdi ise uluslararası bir bilim ekibi, NASA’nın Fermi Gama Işını Uzay Teleskobu’ndan elde edilen verilerin daha önce hiç görülmemiş bir özelliği ortaya çıkardığını bildiriyor.</p>
+
+        <p>Gama ışını patlamaları (GRB’ler), evrendeki en güçlü patlamalardır ve ışığın en yüksek enerjili formu olan yoğun miktarda gama ışını yayarlar. En yaygın GRB türü, dev bir yıldızın çekirdeği yakıtını tüketip çöktüğünde ve hızla dönen bir kara deliğe dönüştüğünde meydana gelir. Kara deliğe düşen madde, yıldızın dış katmanlarını neredeyse ışık hızında delip geçen, zıt yönlü parçacık jetlerini besler. Eğer bu jetlerden biri Dünya’ya doğru yönelmişse, biz bu olayı bir GRB olarak tespit ederiz.</p>
+
+        <p>BOAT patladıktan birkaç dakika sonra, Fermi’nin Gama Işını Patlama Monitörü alışılmadık bir enerji zirvesi kaydetti. Bilim insanları şimdi bu özelliğin, GRB’ler üzerine yapılan 50 yıllık gözlemler boyunca yüksek güvenle tespit edilen ilk emisyon çizgisi olduğunu söylüyor.</p>
+
+        <p>Madde ile ışık etkileşime girdiğinde, enerji karakteristik yollarla emilip yeniden yayılabilir. Bu etkileşimler, belirli renklerin (ya da enerjilerin) parlamasına veya sönmesine neden olur ve bu da ışık tayfında, gökkuşağı gibi yayıldığında görülebilen önemli izler bırakır. Bu izler, evren hakkında son derece değerli bilgiler sunar.</p>
+
+        <p>Bilim ekibi, bu emisyon çizgisinin rastgele bir gürültü (yani tesadüfi bir ölçüm dalgalanması) olma ihtimalinin yarım milyarda birden daha az olduğunu söylüyor.</p>
+
+        <p>GRB 221009A olarak resmî adıyla bilinen BOAT, 9 Ekim 2022’de patladı ve Fermi dahil olmak üzere yörüngedeki birçok gama ışını dedektörünü anında doyum noktasına ulaştırdı. Daha önce tespit edilen GRB’lerle aynı türden olduğu varsayılırsa, BOAT muhtemelen Dünya semalarında 10.000 yıldır görülen en parlak patlamaydı.</p>
+
+        <p>Bahsi geçen emisyon çizgisi, patlamanın tespit edilmesinden yaklaşık 5 dakika sonra — yani Fermi üzerindeki dedektörler artık doyuma uğramayacak kadar parlaklığın azaldığı bir anda — ortaya çıktı. Bu çizgi en az 40 saniye boyunca devam etti ve yayılan enerjinin zirvesi yaklaşık 12 MeV (milyon elektron volt) seviyesine ulaştı. Karşılaştırmak gerekirse, görünür ışığın enerjisi sadece 2–3 elektron volt civarındadır.</p>
+
+        <p>Bilim insanları, bu emisyon çizgisinin en olası kaynağının, elektronlar ile onların karşıt madde eşleri olan pozitronların yok olması (yani birbirlerini “yemesi”) olduğunu düşünüyor. Bu parçacıklar çarpıştığında, her biri 0.511 MeV enerjiye sahip iki gama ışını üretir. Ancak, burada söz konusu olan jet neredeyse ışık hızında bize doğru hareket ettiği için, bu yayım büyük ölçüde “maviye kaymakta” (blueshift) ve çok daha yüksek enerjilere doğru itilmekte.</p>
+
+        <p>Eğer bu yorum doğruysa, 12 MeV zirvesine sahip bir emisyon çizgisi üretilebilmesi için, yok olan parçacıkların bize doğru yaklaşık %99.9 ışık hızında hareket ediyor olması gerekirdi.</p>
+      </div>
+
+      <p><a href="https://svs.gsfc.nasa.gov/14634/#:~:text=The%20BOAT%2C%20formally%20known%20as,Earth's%20skies%20in%2010%2C000%20years." target="_blank">Nasa'nın ilgili makalesine yönlendirir...</a></p>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      if (sidebar.style.left === "0px" || sidebar.style.left === "") {
+        sidebar.style.left = "-220px"; /* Menü kapalı */
+      } else {
+        sidebar.style.left = "0"; /* Menü açıldı */
+      }
+    }
+  </script>
+</body>
+</html>
+

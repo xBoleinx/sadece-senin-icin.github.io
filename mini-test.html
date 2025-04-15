@@ -1,0 +1,340 @@
+<!-- mini-test.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📝Karım Üniversitesi Mezuniyet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('emirim-icin/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1100;
+      color: #fff;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 15px 30px;
+      color: #ff6f91;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .sidebar a:hover {
+      background-color: #ffe3ea;
+    }
+
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 100px auto 50px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .intro {
+      font-size: 20px;
+      margin-bottom: 30px;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    .question {
+      margin-bottom: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .option {
+      background-color: #ffd3dc;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 80%;
+      max-width: 400px;
+      transition: background-color 0.3s;
+      font-size: 17px;
+    }
+
+    .option:hover {
+      background-color: #ffb8c6;
+    }
+
+    .emoji {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    .score-wrapper {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      z-index: 1050;
+      text-align: center;
+    }
+
+    .score-box {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .result-message {
+      margin-top: 10px;
+      font-weight: bold;
+      background-color: rgba(255, 230, 236, 0.9);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    .diploma-container {
+      margin-top: 10px;
+    }
+
+    #diplomaBtn {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #ffc1cc;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #diplomaPopup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2000;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    #diplomaPopup img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+<div style="text-align: center; margin-top: 20px;">
+    <img src="emirim-icin/karim-universitesi-amblem.png" alt="Karım Üniversitesi Amblemi" style="max-width: 200px;">
+  </div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="sidebar" id="sidebar">
+  <a href="index.html">💌 Anasayfa</a>
+
+    <a href="anilar.html">📸 Anılarımız</a>
+    <a href="videolar.html">🎥 Videolarımız</a>
+    <a href="mini-test.html">🎓 Karım Üniversitesi Mezuniyet Sınavı📝</a>
+<a href="gokyuzu-ve-biz.html">🌠 Gökyüzü ve Biz</a>
+    <a href="veda.html">🌹 Veda</a> <!-- Yeni Sayfa Bağlantısı -->
+  </div>
+
+  <div class="score-wrapper">
+    <div id="scoreBox" class="score-box">Puanınız: 0</div>
+    <div class="result-message" id="resultMessage"></div>
+    <div class="diploma-container" id="diplomaBtnBox" style="display:none;">
+      <button id="diplomaBtn" onclick="showDiploma()">🎓 Diplomanı Görüntüle</button>
+    </div>
+  </div>
+
+  <div class="container" id="quizContainer">
+    <div class="intro">
+      Final sınavına hoşgeldin kocacığım. Her soru 10 puan değerindedir. <br/>
+      Eğer geçerli puan alırsan Karım Üniversitesinden mezun olmaya hak kazanacaksın. 💕<br/>
+Ve tabii ki bir mezuniyet diploman olacaktı çünkü neden olmasınnn.<br/>
+      Sınavı başarıyla tamamladığın takdirde sınav sonu diplomanı sağ üst köşedeki puanlama kısmından görüntüleyebilirsin. 🎓
+    </div>
+
+    <div id="quiz"></div>
+  </div>
+
+  <div id="diplomaPopup">
+    <img src="emirim-icin/diploma.jpg" alt="Diploma">
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "Aşağıdakilerden hangisi benim adım DEĞİLDİR?",
+        options: ["Karım", "Aşkım", "Doğa", "Bebeğim"],
+        answer: 2
+      },
+      {
+        question: "En sevdiğim yemek hangisidir?",
+        options: ["Sarma", "Mantı", "Hamburger", "Makarna"],
+        answer: 1
+      },
+      {
+        question: "Sadece seninle görüştüğümde sıktığım o parfüm...",
+        options: ["Kayali Vanilla 28", "YSL Supreme Bouquet", "Victoria's Secret Bare", "Mugler Alien Goddess"],
+        answer: 2
+      },
+      {
+        question: "En sevdiğim mevsim hangisidir?",
+        options: ["İlkbahar", "Sonbahar", "Kış", "Yaz"],
+        answer: 3
+      },
+      {
+        question: "En sevdiğim çiçek hangisidir?",
+        options: ["Papatya", "Kokina", "Orkide", "Gül"],
+        answer: 3
+      },
+      {
+        question: "En sevdiğim içecek hangisi?",
+        options: ["Soda", "Türk Kahvesi", "White Mocha", "Çay"],
+        answer: 1
+      },
+      {
+        question: "En sevdiğim renk?",
+        options: ["Pembe", "Kırmızı", "Siyah", "Gri"],
+        answer: 1
+      },
+      {
+        question: "Beni en çok nasıl etkilersin?",
+        options: [
+          "Giyim tarzınla",
+          "Hediyelerle",
+          "Dünyanın en güzel kızı gibi hissettirip prenses gibi ilgi göstererek",
+          "Sözlerinle"
+        ],
+        answer: 2
+      },
+      {
+        question: "Aşağıdakilerden hangisi beni en çok mutlu eder? (senden sonra en çok)",
+        options: ["Alışveriş", "Uyumak", "Gezmek", "Hediye"],
+        answer: 0
+      },
+      {
+        question: "Hayalimdeki araba nedir?",
+        options: ["Porsche", "Lamborghini", "Maserati", "Ferrari"],
+        answer: 2
+      }
+    ];
+
+    let score = 0;
+    let answeredCount = 0;
+    const totalQuestions = quizData.length;
+    const pointPerQuestion = 100 / totalQuestions;
+
+    const quiz = document.getElementById("quiz");
+    const scoreBox = document.getElementById("scoreBox");
+    const resultMessage = document.getElementById("resultMessage");
+    const diplomaBtnBox = document.getElementById("diplomaBtnBox");
+    const diplomaPopup = document.getElementById("diplomaPopup");
+
+    quizData.forEach((q, index) => {
+      const questionDiv = document.createElement("div");
+      questionDiv.classList.add("question-block");
+
+      const qText = document.createElement("div");
+      qText.className = "question";
+      qText.innerText = `${index + 1}. ${q.question}`;
+      questionDiv.appendChild(qText);
+
+      const optionsDiv = document.createElement("div");
+      optionsDiv.className = "options";
+
+      q.options.forEach((opt, i) => {
+        const option = document.createElement("div");
+        option.className = "option";
+        option.innerText = `${String.fromCharCode(65 + i)}) ${opt}`;
+
+        option.addEventListener("click", function () {
+          if (option.classList.contains("selected")) return;
+
+          const allOptions = option.parentElement.querySelectorAll(".option");
+          allOptions.forEach(o => o.classList.add("selected"));
+
+          if (i === q.answer) {
+            option.innerHTML += " 💖";
+            score += pointPerQuestion;
+          } else {
+            option.innerHTML += " 😿";
+          }
+
+          answeredCount++;
+          updateScoreBox();
+        });
+
+        optionsDiv.appendChild(option);
+      });
+
+      questionDiv.appendChild(optionsDiv);
+      quiz.appendChild(questionDiv);
+    });
+
+   function updateScoreBox() {
+  scoreBox.innerHTML = `Puanınız: ${Math.round(score)}`;
+  if (answeredCount === totalQuestions) {
+    if (score >= 90) {
+      resultMessage.innerText = "Harikasın kocacımm💘";
+      diplomaBtnBox.style.display = "block";
+    } else if (score >= 70) {
+      resultMessage.innerText = "Güzel gidiyorsun ✨";
+    } else {
+      resultMessage.innerText = "Daha dikkatli olalım 😿";
+    }
+  }
+}
+
+
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+
+    function showDiploma() {
+      diplomaPopup.style.display = "block";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background: url("assets/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.sidebar {
+  width: 230px;
+  background-color: #ffdde1;
+  padding-top: 30px;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: #ffc1cc;
+  border-radius: 5px;
+}
+
+.content {
+  margin-left: 230px;
+  padding: 40px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.envelope {
+  width: 300px;
+  height: 200px;
+  background-color: #ffdde1;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.cover {
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 100px solid #ffc1cc;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transform-origin: top;
+  transition: transform 0.5s ease;
+}
+
+.letter {
+  width: 280px;
+  height: 180px;
+  background: white;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.paper {
+  width: 280px;
+  height: 180px;
+  background: white;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(0);
+  transition: opacity 0.5s, transform 0.5s;
+  border-radius: 4px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 1em;
+  line-height: 1.4em;
+  text-align: center;
+}
+
+.envelope.open .cover {
+  transform: rotateX(-180deg);
+}
+
+.envelope.open .paper {
+  opacity: 1;
+  transform: translateY(-200px);
+}
+
+.gallery-container h1 {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 2em;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.photos img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.photos img:hover {
+  transform: scale(1.05);
+}

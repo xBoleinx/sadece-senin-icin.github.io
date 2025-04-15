@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veda</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('emirim-icin/background.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 220px;
+      position: fixed;
+      top: 0;
+      left: -220px;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      padding-top: 20px;
+      transition: 0.3s;
+      overflow-x: hidden;
+      text-align: left; /* Menü elemanlarını sola hizaladık */
+    }
+
+    .sidebar a {
+      display: block;
+      color: #ff6f91;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #ffe3ea;
+    }
+
+    .menu-toggle {
+      font-size: 26px;
+      cursor: pointer;
+      position: fixed;
+      top: 10px;
+      left: 15px;
+      z-index: 1001;
+      color: #ff6f91;
+      background: none;
+      border: none;
+    }
+
+    .content {
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ffffff; /* beyaz renk yapıldı */
+      font-size: 2rem;
+    }
+
+    .info-section {
+      margin-top: 40px;
+      background: rgba(255, 255, 255, 0.8); /* Transparan beyaz kutucuk */
+      padding: 25px;
+      border-radius: 10px;
+      line-height: 1.6;
+      max-width: 600px; /* Maksimum genişlik sınırlaması */
+      margin: 0 auto; /* Merkezi konumlandırma */
+      text-align: left; /* Yazıyı sola hizaladık */
+    }
+
+    /* Yeni Düzenleme: Menüde "Anasayfa"yı aşağı kaydır */
+    .sidebar a:first-child {
+      margin-top: 30px; /* Menüde "Anasayfa"yı biraz aşağı kaydırdım */
+    }
+
+    /* Menü açıldığında içerik sağa kaymasın */
+    .content-centered {
+      margin-left: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+  <div class="sidebar" id="sidebar">
+   <a href="index.html">💌 Anasayfa</a>
+
+    <a href="anilar.html">📸 Anılar</a>
+    <a href="videolar.html">🎥 Videolarımız</a>
+    <a href="mini-test.html">🎓 Karım Üniversitesi Mezuniyet Sınavı📝</a>
+    <a href="gokyuzu-ve-biz.html">🌠 Gökyüzü ve Biz</a>
+    <a href="veda.html">🌹 Veda</a> <!-- Yeni Sayfa Bağlantısı -->
+  </div>
+
+  <div class="content content-centered">
+    <h1>🌹O gün gelirse bilmeni isterim...</h1>
+
+    <div class="info-section">
+      <p>Belki bir gün yollarımız gerçekten ayrılır… Belki aynı anda gökyüzüne bakmayız, aynı şarkıya denk gelmeyiz, ya da bir sabah birbirimizi düşünmeden uyanırız. Ama ne olursa olsun, bizden bir şey kalsın istedim. Bu web sitesi… bir hatıra gibi.</p>
+
+      <p>Kahkahalarımızın, içten bakışlarımızın, birlikte kurduğumuz hayallerin izi var burada. Kim bilir, belki bir gün rastgele açarsın bu sayfayı, gözlerinde bir gülümseme belirir ve hatırlarsın... Çünkü biz gerçekten vardık. Biz, bir zamanlar birbirimize aitken, dünyayı sadece birbirimizin gözleriyle gördük. Ve bu sayfa, “bir zamanlar” değil, “hep içimde” diyebilmek için burada.</p>
+
+      <p>Her şey için teşekkür ederim.</p>
+      <p> Biz hep güzel kalalım.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const content = document.querySelector(".content");
+      if (sidebar.style.left === "0px" || sidebar.style.left === "") {
+        sidebar.style.left = "-220px"; /* Menü kapalı */
+        content.classList.add("content-centered");
+      } else {
+        sidebar.style.left = "0"; /* Menü açıldı */
+        content.classList.remove("content-centered");
+      }
+    }
+  </script>
+</body>
+</html>

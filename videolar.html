@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎥Videolarımız</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: url('emirim-icin/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      padding-top: 60px;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+
+    .sidebar a {
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #ff6f91;
+      display: block;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #ffe3ea;
+    }
+
+    .openbtn {
+      font-size: 28px;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1100;
+    }
+
+    .openbtn:hover {
+      color: #ffdddd;
+    }
+
+    .sidebar-hidden .sidebar {
+      left: -260px;
+    }
+
+    .main {
+      margin-left: 250px;
+      padding: 60px 20px 20px;
+      transition: margin-left 0.3s;
+    }
+
+    .sidebar-hidden .main {
+      margin-left: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      margin-top: 30px;
+    }
+
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 30px 10px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .video-gallery video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 1200px) {
+      .video-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 200px;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+
+      .sidebar-hidden .sidebar {
+        left: -210px;
+      }
+
+      .sidebar-open .main {
+        margin-left: 200px;
+      }
+    }
+  </style>
+</head>
+<body class="sidebar-hidden">
+  <button class="openbtn" onclick="toggleSidebar()">☰</button>
+
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">💌 Anasayfa</a>
+
+    <a href="anilar.html">📸 Anılarımız</a>
+    <a href="videolar.html">🎥 Videolarımız</a>
+    <a href="mini-test.html">🎓 Karım Üniversitesi Mezuniyet Sınavı📝</a>
+<a href="gokyuzu-ve-biz.html">🌠 Gökyüzü ve Biz</a>
+    <a href="veda.html">🌹 Veda</a> <!-- Yeni Sayfa Bağlantısı -->
+  </div>
+
+  <div class="main" id="main">
+    <h1>🎥 Videolarımız</h1>
+    <div class="video-gallery">
+      <video controls src="videos/videos/ani (1).mp4"></video>
+      <video controls src="videos/videos/ani (2).mp4"></video>
+      <video controls src="videos/videos/ani (3).mp4"></video>
+      <video controls src="videos/videos/ani (4).mp4"></video>
+      <video controls src="videos/videos/ani (5).mp4"></video>
+      <video controls src="videos/videos/ani (6).mp4"></video>
+      <video controls src="videos/videos/ani (7).mp4"></video>
+      <video controls src="videos/videos/ani (8).mp4"></video>
+      <video controls src="videos/videos/ani (9).mp4"></video>
+      <video controls src="videos/videos/ani (10).mp4"></video>
+      <video controls src="videos/videos/ani (11).mp4"></video>
+      <video controls src="videos/videos/ani (12).mp4"></video>
+      <video controls src="videos/videos/ani (13).mp4"></video>
+      <video controls src="videos/videos/ani (14).mp4"></video>
+      <video controls src="videos/videos/ani (15).mp4"></video>
+      <video controls src="videos/videos/ani (16).mp4"></video>
+      <video controls src="videos/videos/ani (17).mp4"></video>
+      <video controls src="videos/videos/ani (18).mp4"></video>
+      <video controls src="videos/videos/ani (19).mp4"></video>
+      <video controls src="videos/videos/ani (20).mp4"></video>
+      <video controls src="videos/videos/ani (21).mp4"></video>
+      <video controls src="videos/videos/ani (22).mp4"></video>
+      <video controls src="videos/videos/ani (23).mp4"></video>
+      <video controls src="videos/videos/ani (24).mp4"></video>
+      <video controls src="videos/videos/ani (25).mp4"></video>
+      <video controls src="videos/videos/ani (26).mp4"></video>
+      <video controls src="videos/videos/ani (27).mp4"></video>
+      <video controls src="videos/videos/ani (28).mp4"></video>
+      <video controls src="videos/videos/ani (29).mp4"></video>
+      <video controls src="videos/videos/ani (30).mp4"></video>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.body.classList.toggle("sidebar-hidden");
+    }
+  </script>
+</body>
+</html>
+
