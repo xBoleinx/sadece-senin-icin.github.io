@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💌 Sadece senin için E.M.</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('assets/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1100;
+      color: #fff;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 15px 30px;
+      color: #ff6f91;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .sidebar a:hover {
+      background-color: #ffe3ea;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .container {
+      text-align: left; /* Yazıyı sola hizalamak için */
+      position: relative;
+      max-width: 800px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8); /* Beyaz şeffaf arka plan */
+      padding: 40px;
+      border-radius: 15px; /* Köşeleri yuvarlak yapmak için */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Gölge eklemek için */
+      margin-bottom: 20px; /* Mektup ile arasındaki mesafeyi artırmak için */
+    }
+
+    .envelope {
+      width: 200px;
+      height: 120px;
+      background-color: #ffdde1;
+      position: relative;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 2;
+      margin: 0 auto;
+    }
+
+    .envelope::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-top: 60px solid #ffc1cc;
+      transform-origin: top;
+      transition: transform 0.8s ease;
+      z-index: 3;
+    }
+
+    .envelope.open::before {
+      transform: rotateX(180deg);
+    }
+
+    .paper {
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 2s ease;
+      z-index: 5;
+      visibility: hidden;
+    }
+
+    .envelope.open + .paper {
+      opacity: 1;
+      max-height: 1000px;
+      top: 150px;
+      visibility: visible;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      color: #ff6f91;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 6;
+    }
+
+    .close-btn:hover {
+      color: #ff4c75;
+    }
+
+    p.intro {
+      font-size: 18px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 12px 24px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-btn" onclick="toggleMenu()">MENU ☰</div>
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">💌 Anasayfa</a>
+    <a href="anilar.html">📸 Anılarımız</a>
+    <a href="videolar.html">🎥 Videolarımız</a>
+    <a href="mini-test.html">🎓 Karım Üniversitesi Mezuniyet Sınavı📝</a>
+    <a href="gokyuzu-ve-biz.html">🌠 Gökyüzü ve Biz</a>
+    <a href="veda.html">🌹 Veda</a>
+  </div>
+
+  <div class="container">
+    <p>Hoş Geldin Sevgilim!💌</p>
+<p>Burası bizim için… Sadece ikimize ait, birlikte geçirdiğimiz zamanları hatırlayabileceğimiz bir yer. Her şeyin çok özel olduğu, her detayın anlam kazandığı bir alan.
+<p>Bu sitenin her köşesinde seni düşündüm, her detayında bizi hissettim. Birlikte oluşturduğumuz bu küçük dünyada her anın değerini biraz daha hissediyorum.</p>
+</p>
+<p>Seni seviyorum… ❤️</p>
+
+  </div>
+
+  <!-- Mektup kısmı, kutunun dışında yer alacak -->
+  <div class="envelope" onclick="toggleEnvelope()"></div>
+
+  <div class="paper">
+    <button class="close-btn" onclick="closePaper()">×</button>
+    <p>
+      Bazen sevgi susar, sessizleşir; oysa bu, sevginin bittiği değil, sınandığı andır. Birlikte kalabilmek, sadece güzel günlerde değil; kırıldığımızda, yorulduğumuzda da birbirimize sırt çevirmemekle yükümlüdür. Çünkü sevgi; anlaşılmak, sabır göstermek ve her şeye rağmen el ele kalabilmektir. Bir ilişkide en kıymetli şey, zor anlarda bile birbirinin gözünde umut bulabilmektir.<br>
+      Hayatın getirdiği fırtınalar, belirsizlikler ve yorgunluklar arasında bile kalpte taşıdığımız sevgi, her şeyi onarmaya yeter. Gerçekten seven iki insan, ne kadar uzak düşerse düşsün, içlerindeki o sıcaklığı kaybetmedikçe yeniden aynı yolda buluşabilir. Sevgi yalnızca mutlu anları değil, en karanlık günleri de paylaşabilmeyi gerektirir.<br>
+      -Prensesin.
+    </p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+
+    function toggleEnvelope() {
+      const envelope = document.querySelector('.envelope');
+      const paper = document.querySelector('.paper');
+      envelope.classList.toggle('open');
+
+      if (envelope.classList.contains('open')) {
+        paper.style.opacity = '1';
+        paper.style.maxHeight = '1000px';
+        paper.style.top = '150px';
+        paper.style.visibility = 'visible';
+      } else {
+        paper.style.opacity = '0';
+        paper.style.maxHeight = '0';
+        paper.style.top = '60px';
+        paper.style.visibility = 'hidden';
+      }
+    }
+
+    function closePaper() {
+      const envelope = document.querySelector('.envelope');
+      const paper = document.querySelector('.paper');
+      envelope.classList.remove('open');
+      paper.style.opacity = '0';
+      paper.style.maxHeight = '0';
+      paper.style.top = '60px';
+      paper.style.visibility = 'hidden';
+    }
+  </script>
+</body>
+</html>
